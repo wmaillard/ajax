@@ -46,8 +46,12 @@ function changePage(newPage, title){
 		}
 		else if(newPage = "newRecord"){
 			$("#save").on("click", function(e){
-					
-				alert("sent data");
+				var data = newRecord();
+				$.post('/newRecord', data, function(){
+					alert("I have saved the data");
+					changePage(newPage, title);
+				});
+				
 				//Send new data here
 				return false;
 
@@ -61,9 +65,27 @@ function changePage(newPage, title){
 
 
 function newRecord(){
+	var radio, checked;
+	checked= [];
+	if($("#radioVanilla").is(':checked')){
+		radio = "Vanilla";
+	}
+	else radio = "Chocolate";
+	
+	$(".checks").each(function(index){
+		if ($(this).is(':checked')){
+			checked.push($(this).val());
+		}
+	})
 	var data = {"name":$("#name").val(), 
+				"email":$("#email").val(),
+				"website":$("#website").val(),
+				"icecream":radio,
+				"animals":checked
+			   }
 				
-	$.post('/newRecord', data);
+	return data;
+	
 }
 
 
