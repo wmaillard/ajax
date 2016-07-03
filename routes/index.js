@@ -5,7 +5,12 @@ var Moment = require('moment-timezone');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { time: Moment().tz('America/Los_Angeles').format('MM-DD-YYYY HH:mm:ss') });
+  res.render('index');
 });
+router.post('/newRecord', function(req, res, next){
+	console.log(req.body);
+	res.send({'success':true});
+});
+
 
 module.exports = router;

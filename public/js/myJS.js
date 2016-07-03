@@ -46,6 +46,7 @@ function changePage(newPage, title){
 		}
 		else if(newPage = "newRecord"){
 			$("#save").on("click", function(e){
+					
 				alert("sent data");
 				//Send new data here
 				return false;
@@ -56,3 +57,25 @@ function changePage(newPage, title){
 	});
 	
 };
+
+
+
+function newRecord(){
+	var data = {"name":$("#name").val(), 
+				
+	$.post('/newRecord', data);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
