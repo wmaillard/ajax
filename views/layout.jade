@@ -1,0 +1,68 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Assignment 2
+    // This is all just a pretty UI template to get started from here:  http://startbootstrap.com/template-overviews/freelancer/
+    // Bootstrap Core CSS
+    link(href='vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    // Theme CSS
+    link(href='css/freelancer.min.css', rel='stylesheet')
+    // Custom Fonts
+    link(href='vendor/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic', rel='stylesheet', type='text/css')
+    | -
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+  body#page-top.index
+    // Navigation
+    nav#mainNav.navbar.navbar-default.navbar-fixed-top.navbar-custom
+      .container
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header.page-scroll
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+            span.sr-only Toggle navigation
+            |  Menu 
+            i.fa.fa-bars
+          a.navbar-brand(href='#page-top') Assignment 2
+        // Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li.hidden
+              a(href='#page-top')
+            li.page-scroll
+              a#newRecord(href='#new') New Record
+            li.page-scroll
+              a#viewRecords(href='#new') View and Edit Records
+        // /.navbar-collapse
+      // /.container-fluid
+    // Contact Section
+    section
+      .container
+        .row
+          .col-lg-12.text-center
+            h2#pageTitle Add a Record
+            hr.star-primary
+        .row
+          #ajaxContainer.col-lg-8.col-lg-offset-2
+            // To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.
+            // The form should work on most web servers, but if the form is not working you may need to configure your web server differently.
+    // jQuery
+    script(src='vendor/jquery/jquery.min.js')
+    // Bootstrap Core JavaScript
+    script(src='vendor/bootstrap/js/bootstrap.min.js')
+    // Plugin JavaScript
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js')
+    // Contact Form JavaScript
+    script(src='js/jqBootstrapValidation.js')
+    script(src='js/contact_me.js')
+    // My custom JS
+    script(src='js/myJS.js')
