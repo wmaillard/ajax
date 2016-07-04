@@ -113,7 +113,10 @@ function newRecord(){
 	if($("#Vanilla").is(':checked')){
 		radio = "Vanilla";
 	}
-	else radio = "Chocolate";
+  else if($("#Chocolate").is(':checked')){
+    radio = "Chocolate";
+  }
+	else radio = " ";
 	
 	$(".checks").each(function(index){
 		if ($(this).is(':checked')){
