@@ -19,7 +19,7 @@ $(function(){
 
 function changePage(newPage, title){
 	$("#pageTitle").html(title);
-	$("#ajaxContainer").load(newPage, function(){
+	$("#ajaxContainer").load(newPage + ".html", function(){
 		if(newPage == "viewRecords"){
 			$(".edit").on("click", function(event){
 				if($("#contactFormDiv").length === 0){
