@@ -2,7 +2,10 @@ var express = require('express');
 var router = express.Router();
 var Moment = require('moment-timezone');
 var AWS = require('aws-sdk');
-AWS.config.loadFromPath('./config.json');
+AWS.config.region='us-west-w';
+AWS.config.accessKeyId = process.env.ACCESSKEYID;
+AWS.config.secretAccessKey = process.env.SECRETACCESSKEY;
+AWS.config.endpoint = "https://dynamodb.us-west-2.amazonaws.com";
 var scanResponse = {};
 
 //AWS
