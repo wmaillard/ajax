@@ -4,8 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var AWS = require('aws-sdk');
-AWS.config.loadFromPath('./config.json');
+
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -28,14 +27,6 @@ app.use('/', routes);
 app.use('/users', users);
 
 
-//AWS
-var db = new AWS.DynamoDB();
-var params = {"userInput":"user"};
-db.batchGetItem(params, function (err, data) {
-  if (err) console.log(err, err.stack); // an error occurred
-  else     console.log(data);           // successful response
-});
-//AWS
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
